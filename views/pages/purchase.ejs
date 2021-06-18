@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+  <title>Harvest vase</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" >
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <style type="text/css">
+    table{
+      margin-top: 10%;
+    }
+  </style>
+</head>
+
+<body>
+
+  
+<div class="container">
+    <table class="table table-bordered table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">order date</th>
+      <th scope="col">product</th>
+      <th scope="col">price</th>
+      <th scope="col">status</th>
+      </tr>
+  </thead>
+  <tbody>
+ 
+  <%
+
+     for(i=total_rows-1;i>=0;i--)
+     {
+     %>
+    <tr>
+
+      <th scope="row"><%=total_rows-i%></th>
+      <td><%=order_date[i]%></td>
+      <td><%=order_product[i]%></td>
+      <td><%=order_price[i]%></td>
+      <td>CONFIRMED</td>
+
+    <tr>
+      <%
+     }
+
+
+      %>
+    
+  </tbody>
+    </table>
+  </div>
+
+  <iframe src="https://komarti-node-chat-app.herokuapp.com" width="100%" height="450" style="border:1px solid black;">
+  </iframe>
+
+</body>
+
+</html>

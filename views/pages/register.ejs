@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task1</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+      .msg{
+    color: red;
+  }
+ 
+    </style>
+  </head>
+      <body>
+
+
+       <% if(typeof alert != 'undefined') { 
+      msg0 = ""
+      msg1 = ""
+      msg2 = ""
+      
+         
+             for(i=0;i< alert.length; i++) { 
+                    
+
+                     if(alert[i].param == "name" )
+                      msg0 = alert[i].msg 
+                   
+                     if(alert[i].param == "email" ) 
+                     msg1 = alert[i].msg 
+                    
+                     if(alert[i].param == "pass" )  
+                     msg2 = alert[i].msg 
+                    
+                     }
+
+                     
+                   }
+
+                   %>
+
+                   <% if(typeof alert2 != 'undefined') { 
+                    
+                    console.log(msg)
+                   
+                   msg1=msg } %>
+
+                   <%
+
+                   if(typeof lalert2 !== 'undefined')
+                   {
+                      %>
+                      
+                      <script type="text/javascript">
+                        
+                       alert("wrong credentials")
+                      </script>
+
+
+
+                       <%
+
+                   }
+
+
+
+
+
+
+
+
+
+
+
+                   %>
+
+    <div class="main">
+      <div class="container a-container" id="a-container">
+        <form class="form" id="a-form" method="post" action="/signup_check">
+          <h2 class="title">Create Account</h2>
+          <span class="form__span">or use email for registration</span>
+          <input class="form__input" type="text" placeholder="Name" name="name"  value="<%if(typeof alert!='undefined'||typeof alert2!= 'undefined'){%><%=data.name%><%}%>" />
+          <span class="msg"><%= typeof alert != 'undefined' ? msg0: '' %></span>
+          <input class="form__input" type="text" placeholder="Email" name="email" value="<%if(typeof alert!='undefined'||typeof alert2!= 'undefined'){%><%=data.email%><%}%>" />
+          <span class="msg"><% if(typeof alert != 'undefined' || typeof alert2 != 'undefined') {%><%=msg1%><%}%></span>
+          <input class="form__input" type="password" placeholder="Password" name="pass" value="<%if(typeof alert!='undefined'||typeof alert2!= 'undefined'){%><%=data.pass%><%}%>" />
+          <span class="msg"><%= typeof alert != 'undefined' ? msg2: '' %></span>
+          <button class="button" type="submit" style="cursor: pointer;">SIGN UP</button>
+        </form>
+      </div>
+
+      <div class="container b-container" id="b-container">
+        <form class="form" id="b-form" method="post" action="/login_submit">
+          <h2 class="title">Sign in to Website</h2>
+         
+          <span class="form__span">or use your email account</span>
+          <input class="form__input" type="text" placeholder="Email" name="email" />
+          <input class="form__input" type="password" placeholder="Password" name="pass" />
+          <a class="form__link">Forgot your password?</a>
+          <button class="button" type="submit" style="cursor: pointer;">SIGN IN</button> 
+        </form>
+      </div>
+
+      <div class="switch" id="switch-cnt">
+        <div class="switch__circle"></div>
+        <div class="switch__circle switch__circle--t"></div>
+        <div class="switch__container" id="switch-c1">
+          <h2 class="title">JumpBack in!</h2>
+          <p class="description">already a part of our family? login with your personal info and keep connected</p>
+          <button class="switch__button button switch-btn switch_signin">SIGN IN</button>
+        </div>
+        <div class="switch__container is-hidden" id="switch-c2">
+          <h2 class="switch__title title">Hello Friend !</h2>
+          <p class="description">Enter your personal details and start journey with us</p>
+          <button class="switch__button button switch-btn">SIGN UP</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
