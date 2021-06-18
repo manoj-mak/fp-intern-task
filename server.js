@@ -21,7 +21,7 @@ var url = process.env.MONGODB_URI || "mongodb://localhost:27017/manoj";
 
 MongoClient.connect(url, {useUnifiedTopology: true}, function(err, db) {
   if (err) throw err;
-  console.log("Database created!");
+  console.log("Database created");
   db.close();
 });
 
